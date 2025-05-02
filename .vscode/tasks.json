@@ -1,0 +1,19 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build iOS App",
+            "type": "shell",
+            "command": "xcodebuild -project ChicagoFoodInspections.xcodeproj -scheme ChicagoFoodInspections -configuration Debug -sdk iphonesimulator -derivedDataPath build",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        }
+    ]
+} 

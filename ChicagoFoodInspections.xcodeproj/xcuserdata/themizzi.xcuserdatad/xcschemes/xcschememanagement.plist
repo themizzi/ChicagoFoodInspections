@@ -4,10 +4,33 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ChicagoFoodInspections (Fake).xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>ChicagoFoodInspections.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>513F9B1E2DC4416500EA541C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>513F9B342DC4416700EA541C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>513F9B3E2DC4416700EA541C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

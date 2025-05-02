@@ -1,14 +1,6 @@
-//
-//  ChicagoFoodInspectionsTests.swift
-//  ChicagoFoodInspectionsTests
-//
-//  Created by Joe Mizzi on 5/1/25.
-//
-
 import XCTest
-@testable import ChicagoFoodInspections
 
-final class ChicagoFoodInspectionsTests: XCTestCase {
+final class ViewModelTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
