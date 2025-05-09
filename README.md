@@ -124,6 +124,7 @@ classDiagram
     ViewController ..|> UITableViewDelegate
     ViewController ..|> UITableViewDataSource
     SceneDelegate ..|> UIWindowSceneDelegate
+    View ..|> UIView
     AppDelegate --> SceneDelegate
     SceneDelegate --> ViewController
     ViewController --> View
