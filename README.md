@@ -144,7 +144,7 @@ classDiagram
 
 ```mermaid
 stateDiagram-v2
-    [*] --> Loading : App starts
+    [*] --> Loading
     Loading --> Loaded : Load
     Loading --> Error : Show Error
     Loaded --> Loading : Refresh
