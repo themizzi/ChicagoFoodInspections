@@ -4,19 +4,35 @@
 
 ```mermaid
 classDiagram
-    class AppDelegate {
-        <<UIApplicationDelegate>>
+    class UIApplicationDelegate {
+        <<interface>>
+    }
+
+    class AppDelegate
+
+    class UIWindowSceneDelegate {
+        <<interface>>
     }
 
     class SceneDelegate {
-        <<UIWindowSceneDelegate>>
         UIWindow~optional~ window
         Set~AnyCancellable~ cancellables
         +scene(_:willConnectTo:options:)
     }
 
+    class UIViewController {
+        <<interface>>
+    }
+
+    class UITableViewDelegate {
+        <<interface>>
+    }
+
+    class UITableViewDataSource {
+        <<interface>>
+    }
+
     class ViewController {
-        <<UIViewController, UITableViewDelegate, UITableViewDataSource>>
         UIBarButtonItem refreshButton
         View mainView
         AppModel viewModel
@@ -31,8 +47,11 @@ classDiagram
         +tableView(_:titleForHeaderInSection:) String?
     }
 
+    class UIView {
+        <<interface>>
+    }
+
     class View {
-        <<UIView>>
         UITableView tableView
         UIActivityIndicatorView activityIndicator
         UILabel errorLabel
@@ -54,17 +73,17 @@ classDiagram
     }
 
     class AppState {
-        <<enum>>
-        loading
+        <<enumeration>>
+        loading()
         loaded([Inspection])
         error(Error)
     }
 
     class AppInput {
-        <<enum>>
+        <<enumeration>>
         load([Inspection])
         showError(Error)
-        refresh
+        refresh()
     }
 
     class Inspection {
@@ -74,23 +93,21 @@ classDiagram
     }
 
     class AppAction {
-        <<protocol>>
+        <<interface>>
         +callAsFunction(_: (AppInput) -> Void)
     }
 
     class LoadingAction {
-        <<AppAction>>
         InspectionsLoader inspectionsLoader
         +callAsFunction(_: (AppInput) -> Void)
     }
 
     class InspectionsLoader {
-        <<protocol>>
+        <<interface>>
         +callAsFunction() async throws -> [Inspection]
     }
 
     class SODAInspectionsLoader {
-        <<InspectionsLoader>>
         URLSession urlSession
         JSONDecoder decoder
         URL baseURL
@@ -98,11 +115,15 @@ classDiagram
     }
 
     class FakeInspectionsLoader {
-        <<InspectionsLoader>>
         Double errorRate
         +callAsFunction() throws -> [Inspection]
     }
 
+    AppDelegate ..|> UIApplicationDelegate
+    ViewController ..|> UIViewController
+    ViewController ..|> UITableViewDelegate
+    ViewController ..|> UITableViewDataSource
+    SceneDelegate ..|> UIWindowSceneDelegate
     AppDelegate --> SceneDelegate
     SceneDelegate --> ViewController
     ViewController --> View
